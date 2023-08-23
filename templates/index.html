@@ -5,11 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+
   <title>Wildfires</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-   <!-- flask code to link to your styles.css file. Feel free to update to match your css file-->
+
+  <!-- flask code to link to your styles.css file. Feel free to update to match your css file-->
   <link rel="stylesheet" href="../static/css/style.css">
  
 </head>
@@ -17,13 +23,26 @@
 <body>
   <!--
 
+  
+
     THIS IS A BLANK TEMPLATE TO USE FOR YOUR INITIAL HTML. 
 
   -->
 
+  <!-- The div that holds our map -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
 
   <!-- flask code to link to your index.js file. Feel free to copy / paste or adjust to your file names-->
-  <script src="{{ url_for('static', filename='index.js') }}"></script>
+  <!-- <script src="{{ url_for('static', filename='index.js') }}"></script> -->
+  <script type="text/javascript" src="../static/index.js"></script>
+
   <!-- <script type= "application/json" src="../static/index.js"></script> -->
 </body>
 

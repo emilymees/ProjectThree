@@ -51,24 +51,24 @@ def data():
     data = cur.fetchall()
     list =[]
     for row in data:
-        print(row)
+        # print(row)
         list.append({
             "Fire_ID" : row[0],
             "Agency_Type" :  row[1],
             "NWCG_Reporting_Agency" :row[2],
             "reporting_unit_name": row[3],
-            "fire_name":
-            "year":
-            "fire_discovery_date":
-            "date_contained":
-            "nwcg_cause_classification":
-            "cause_description":
-            "fire_size":
-            "latitude":
-            "longitude":
-            "fire_origin_land_owner":
-            "state":
-            "county":
+            "fire_name": row[4],
+            "year":row[5],
+            "fire_discovery_date":row[6],
+            "date_contained":row[7],
+            "nwcg_cause_classification":row[8],
+            "cause_description":row[9],
+            "fire_size":row[10],
+            "latitude":row[11],
+            "longitude":row[12],
+            "fire_origin_land_owner":row[13],
+            "state":row[14],
+            "county":row[15]
 
         })
     cur.close()

@@ -8,22 +8,57 @@
   <title>Events</title>
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
-   <!-- flask code to link to your styles.css file. Feel free to update to match your css file-->
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  <!-- Add Leaflet.css -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+  <style>
+    /* Add CSS styling here if needed */
+    #map-container {
+      height: 400px;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
-  <!--
+  <!-- Display fetched data here -->
+  <div id="data-container"></div>
+  
+  <!-- Add a map container -->
+  <div id="map-container"></div>
 
-    THIS IS A BLANK TEMPLATE TO USE FOR YOUR INITIAL HTML. 
-
-  -->
-
-
-  <!-- flask code to link to your index.js file. Feel free to copy / paste or adjust to your file names-->
+  <!-- Flask code to link to your index.js file. -->
   <script src="{{ url_for('static', filename='index.js') }}"></script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Your existing D3.js and Plotly code
+      // ...
+
+      // Leaflet.js events map code
+      const mapContainer = L.map("map-container").setView([0, 0], 2);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(mapContainer);
+
+      // Fetch data from Flask route and add markers
+      fetch("/getWildfiresData")
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(entry => {
+            L.marker([entry.Latitude, entry.Longitude]).addTo(mapContainer)
+              .bindPopup(`Year: ${entry.Year}<br>Count: ${entry.Count}`)
+              .openPopup();
+          });
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+        });
+    });
+  </script>
 </body>
 
 </html>

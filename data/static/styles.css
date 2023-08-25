@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Events Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <style>
+    /* Add CSS styling here if needed */
+    #map-container {
+      height: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Events Map</h1>
+  <div id="map-container"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const mapContainer = L.map("map-container").setView([0, 0], 2); // Center and zoom level
+
+      // Add a map tile layer (replace with your preferred map provider)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(mapContainer);
+
+      // Fetch data from Flask route
+      fetch("/getWildfiresData")
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(entry => {
+            // Create a marker with a label for each event
+            L.marker([entry.Latitude, entry.Longitude]).addTo(mapContainer)
+              .bindPopup(`Year: ${entry.Year}<br>Count: ${entry.Count}`)
+              .openPopup();
+          });
+        })
+        .catch(error => {
+          console.error("Error fetching data:", error);
+        });
+    });
+  </script>
+</body>
+
+</html>

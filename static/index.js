@@ -12,7 +12,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 function circleColor(fireSize) {
-  if (fireSize < 50000) return "#618685";
+  if (fireSize < 50000) return "#008080";
   else if (fireSize < 100000) return "#e5c850";
   else if (fireSize < 150000) return "#eca1a6";
   else if (fireSize < 200000) return "#d87641";
@@ -22,17 +22,17 @@ function circleColor(fireSize) {
 function getColor(fireCause) {
   colorList = []
   for(i=0; i<fireCause.length; i++){
-    if (fireCause [i] === 'Equipment and vehicle use') colorList.push("#FFFF33");
-    else if (fireCause [i] === 'Power generation transmission distribution') colorList.push("#CCCC00");
-    else if (fireCause [i] === 'Debris and open burning') colorList.push("#FFCC99");
-    else if (fireCause [i] === 'Smoking') colorList.push("#CCCC99");
-    else if (fireCause [i] === 'Recreation and ceremony') colorList.push("#CC9900");
-    else if (fireCause [i] === 'Arson incendiarism') colorList.push("#FF9966");
-    else if (fireCause [i] === 'Fireworks') colorList.push("#FF9900");
-    else if (fireCause [i] === 'Misuse of fire by a minor') colorList.push("#CC6699");
-    else if (fireCause [i] === 'Railroad operations and maintenance') colorList.push("#FF6633");
-    else if (fireCause [i] === 'Firearms and explosives use') colorList.push("#CC3366");
-    else if (fireCause [i] === 'Other causes') colorList.push("#CC3300");
+    if (fireCause [i] === 'Equipment and vehicle use') colorList.push("#F7DC6F");
+    else if (fireCause [i] === 'Power generation transmission distribution') colorList.push("#F1C40F");
+    else if (fireCause [i] === 'Debris and open burning') colorList.push("#F39C12");
+    else if (fireCause [i] === 'Smoking') colorList.push("#EB984E");
+    else if (fireCause [i] === 'Recreation and ceremony') colorList.push("#D35400");
+    else if (fireCause [i] === 'Arson incendiarism') colorList.push("#CD6155");
+    else if (fireCause [i] === 'Fireworks') colorList.push("#E74C3C");
+    else if (fireCause [i] === 'Misuse of fire by a minor') colorList.push("#B03A2E");
+    else if (fireCause [i] === 'Railroad operations and maintenance') colorList.push("#873600");
+    else if (fireCause [i] === 'Firearms and explosives use') colorList.push("#FFBF00");
+    else if (fireCause [i] === 'Other causes') colorList.push("red");
     else if (fireCause [i] === "Natural") colorList.push("#3D9C73");}
   return colorList;
 };
@@ -183,7 +183,7 @@ var legend = L.control({ position: "bottomright" });
 legend.onAdd = function() {
   var div = L.DomUtil.create("div", "legend");
   div.innerHTML += "<h4>Number of Acres Burned</h4>";
-  div.innerHTML += '<i style="background: #618685"></i><span>5,000 - 50,000</span><br>';
+  div.innerHTML += '<i style="background: #008080"></i><span>5,000 - 50,000</span><br>';
   div.innerHTML += '<i style="background: #e5c850"></i><span>50,000 - 100,000</span><br>';
   div.innerHTML += '<i style="background: #eca1a6"></i><span>100,000 - 150,000</span><br>';
   div.innerHTML += '<i style="background: #d87641"></i><span>150,000 - 200,000</span><br>';

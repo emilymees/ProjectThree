@@ -3,7 +3,7 @@
 // let data1="http://127.0.0.1:5000/"
 // var L = window.L
 let myMap = L.map("map", {
-  center: [37.0902, -95.7129],
+  center: [54.5260, -105.2551],
   zoom: 3
 });
 
@@ -73,6 +73,47 @@ d3.json("/data").then(function(data) {
             },
           }])
         }
+  function createBarChart(data) {
+    const states = [...new Set(data.map(item => item.state))]; // Get unique years
+    const fireCounts = {};
+
+    states.forEach(state => {
+      const count = data.filter(item => item.state === state).length;
+      fireCounts[state] = count;
+    });
+
+    const barChartContainer = document.getElementById("barChart");
+
+    Highcharts.chart(barChartContainer, {
+      chart: {
+        type: "column",
+      },
+      title: {
+        text: "Number of Fires per Year",
+      },
+      xAxis: {
+        categories: states,
+        title: {
+          text: "State",
+        },
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "Number of Fires",
+        },
+      },
+      series: [
+        {
+          name: "Number of Fires",
+          data: Object.values(fireCounts),
+          color: "rgba(54, 162, 235, 0.8)", // Customize color
+        },
+      ],
+    });
+  }
+
+  
   // Function to update map data based on the selected year
   function updateMapData(selectedYear) {
     clearCircleMarkers();
@@ -84,6 +125,7 @@ d3.json("/data").then(function(data) {
     // Create/update circle markers
     createCircleMarkers(selectedMarkers);
     createPieChart(selectedData);
+    createBarChart(selectedData);
   }
   // Get the dropdown select element
   const yearSelect = document.getElementById("year-select");

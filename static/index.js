@@ -12,11 +12,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(myMap);
 
 function circleColor(fireSize) {
-  if (fireSize < 50000) return "#008080";
-  else if (fireSize < 100000) return "#e5c850";
-  else if (fireSize < 150000) return "#eca1a6";
-  else if (fireSize < 200000) return "#d87641";
-  else return "#50394c";
+  if (fireSize < 50000) return "#F7C19C";
+  else if (fireSize < 100000) return "#FF948C";
+  else if (fireSize < 150000) return "#F84B41";
+  else if (fireSize < 200000) return "#C70075";
+  else return "#6F0032";
 };
 
 function getColor(fireCause) {
@@ -183,11 +183,11 @@ var legend = L.control({ position: "bottomright" });
 legend.onAdd = function() {
   var div = L.DomUtil.create("div", "legend");
   div.innerHTML += "<h4>Number of Acres Burned</h4>";
-  div.innerHTML += '<i style="background: #008080"></i><span>5,000 - 50,000</span><br>';
-  div.innerHTML += '<i style="background: #e5c850"></i><span>50,000 - 100,000</span><br>';
-  div.innerHTML += '<i style="background: #eca1a6"></i><span>100,000 - 150,000</span><br>';
-  div.innerHTML += '<i style="background: #d87641"></i><span>150,000 - 200,000</span><br>';
-  div.innerHTML += '<i style="background: #50394c"></i><span>+ 200,000</span><br>';
+  div.innerHTML += '<i style="background: #F7C19C"></i><span>5,000 - 50,000</span><br>';
+  div.innerHTML += '<i style="background: #FF948C"></i><span>50,000 - 100,000</span><br>';
+  div.innerHTML += '<i style="background: #F84B41"></i><span>100,000 - 150,000</span><br>';
+  div.innerHTML += '<i style="background: #C70075"></i><span>150,000 - 200,000</span><br>';
+  div.innerHTML += '<i style="background: #6F0032"></i><span>+ 200,000</span><br>';
   return div;
 };
 legend.addTo(myMap);

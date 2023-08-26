@@ -105,23 +105,28 @@ d3.json("/data").then(function(data) {
           }])
         }
 
+
+// Bar chart for Number of Acres Burned per Year
   function createBarChart(data) {
     const states = [...new Set(data.map(item => item.state))]; // Get unique years
-    const fireCounts = {};
+
+    const totalAcres = {};
 
     states.forEach(state => {
-      const count = data.filter(item => item.state === state).length;
-      fireCounts[state] = count;
-    });
-
+      const acres = data.filter(item => item.state === state).reduce(function(i, j) {
+        return i = j.fire_size;
+      }, 0);
+      totalAcres[state] = acres;
+    })
+    
     const barChartContainer = document.getElementById("barChart");
 
     Highcharts.chart(barChartContainer, {
       chart: {
-        type: "column",
+        type: "bar",
       },
       title: {
-        text: "Number of Fires per Year",
+        text: "Acres Burned per State",
       },
       xAxis: {
         categories: states,
@@ -132,18 +137,19 @@ d3.json("/data").then(function(data) {
       yAxis: {
         min: 0,
         title: {
-          text: "Number of Fires",
+          text: "Number of Acres",
         },
       },
       series: [
         {
-          name: "Number of Fires",
-          data: Object.values(fireCounts),
+          name: "Acres Burned",
+          data: Object.values(totalAcres),
           color: "rgba(54, 162, 235, 0.8)", // Customize color
         },
       ],
     });
   }
+
 
   // Function to update map data based on the selected year
   function updateMapData(selectedYear) {
@@ -181,7 +187,7 @@ d3.json("/data").then(function(data) {
 var legend = L.control({ position: "bottomright" });
 legend.onAdd = function() {
   var div = L.DomUtil.create("div", "legend");
-  div.innerHTML += "<h4>Number of Acres Burned</h4>";
+  div.innerHTML += "<h4>Size of Fire (Acres)</h4>";
   div.innerHTML += '<i style="background: #F7C19C"></i><span>5,000 - 50,000</span><br>';
   div.innerHTML += '<i style="background: #FF948C"></i><span>50,000 - 100,000</span><br>';
   div.innerHTML += '<i style="background: #F84B41"></i><span>100,000 - 150,000</span><br>';

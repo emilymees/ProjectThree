@@ -22,18 +22,18 @@ function circleColor(fireSize) {
 function getColor(fireCause) {
   colorList = []
   for(i=0; i<fireCause.length; i++){
-    if (fireCause [i] === 'Equipment and vehicle use') colorList.push("#F7DC6F");
-    else if (fireCause [i] === 'Power generation transmission distribution') colorList.push("#F1C40F");
-    else if (fireCause [i] === 'Debris and open burning') colorList.push("#F39C12");
-    else if (fireCause [i] === 'Smoking') colorList.push("#EB984E");
-    else if (fireCause [i] === 'Recreation and ceremony') colorList.push("#D35400");
-    else if (fireCause [i] === 'Arson incendiarism') colorList.push("#CD6155");
-    else if (fireCause [i] === 'Fireworks') colorList.push("#E74C3C");
-    else if (fireCause [i] === 'Misuse of fire by a minor') colorList.push("#B03A2E");
-    else if (fireCause [i] === 'Railroad operations and maintenance') colorList.push("#873600");
-    else if (fireCause [i] === 'Firearms and explosives use') colorList.push("#FFBF00");
-    else if (fireCause [i] === 'Other causes') colorList.push("red");
-    else if (fireCause [i] === "Natural") colorList.push("#3D9C73");}
+    if (fireCause [i] === 'Equipment and vehicle use') colorList.push("#3c4e4b");
+    else if (fireCause [i] === 'Power generation transmission distribution') colorList.push("#466964");
+    else if (fireCause [i] === 'Debris and open burning') colorList.push("#599e94");
+    else if (fireCause [i] === 'Smoking') colorList.push("#6cd4c5");
+    else if (fireCause [i] === 'Recreation and ceremony') colorList.push("#1984c5");
+    else if (fireCause [i] === 'Arson incendiarism') colorList.push("#22a7f0");
+    else if (fireCause [i] === 'Fireworks') colorList.push("#63bff0");
+    else if (fireCause [i] === 'Misuse of fire by a minor') colorList.push("#a7d5ed");
+    else if (fireCause [i] === 'Railroad operations and maintenance') colorList.push("#48446e");
+    else if (fireCause [i] === 'Firearms and explosives use') colorList.push("#5e569b");
+    else if (fireCause [i] === 'Other causes') colorList.push("#776bcd");
+    else if (fireCause [i] === "Natural") colorList.push("#a9adb5");}
   return colorList;
 };
 
@@ -88,14 +88,13 @@ d3.json("/data").then(function(data) {
     
       const pieLabels = Object.keys(causeCounts);
       const pieData = Object.values(causeCounts);
-      console.log(pieLabels);
+
       // Access the canvas element
       const pieChartCanvas = document.getElementById("pieChart")
       
         // window.pieChart.data.datasets[0].data = pieData;
         // window.pieChart.update();
       // } else {
-        // function pieColor(causeData)
         Plotly.newPlot(pieChartCanvas, [{
           type: 'pie',
           labels: pieLabels,
@@ -191,6 +190,7 @@ legend.onAdd = function() {
   return div;
 };
 legend.addTo(myMap);
+
 
   // Create new circle markers for the selected year
 //   data.forEach(markerData => {

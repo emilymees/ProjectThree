@@ -11,11 +11,21 @@ body {
 
   #map {
     width: 100%;
-    height: 700px;
+    height: 550px;
     border: 1px solid #ccc;
     border-radius: 10px;
   }
 
+  select {
+    position:relative;
+    left: 70px;
+    height: 30px;
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    /* font-weight: bold; */
+
+  }
   
   /* Customize map controls */
   .leaflet-control {

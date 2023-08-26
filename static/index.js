@@ -126,7 +126,7 @@ d3.json("/data").then(function(data) {
         type: "bar",
       },
       title: {
-        text: "Acres Burned per State",
+        text: "Total Acres Burned per State per Year",
       },
       xAxis: {
         categories: states,

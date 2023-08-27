@@ -1,5 +1,4 @@
-# ProjectThree
-<h1> Wildfires Analysis in the US </h2>
+<h1> Wildfires Analysis in the US </h1>
 
 <h2> Overview </h2>
 

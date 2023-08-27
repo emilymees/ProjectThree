@@ -1,7 +1,8 @@
 //Connects to flask
-
 // let data1="http://127.0.0.1:5000/"
 // var L = window.L
+
+
 let myMap = L.map("map", {
   center: [37.0902, -95.7129],
   zoom: 4
@@ -36,6 +37,10 @@ function getColor(fireCause) {
     else if (fireCause [i] === "Natural") colorList.push("#a9adb5");}
   return colorList;
 };
+
+// Highcharts.setOptions({
+//   colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
+// });
 
 // var Highcharts = require('highcharts/highstock');  
 
@@ -74,34 +79,33 @@ d3.json("/data").then(function(data) {
 
 
 
-      function createPieChart(data) {
-        const causeCounts = {};
+    function createPieChart(data) {
+      const causeCounts = {};
       
-        data.forEach(item => {
-          const cause = item.cause_description;
-          if (causeCounts[cause]) {
-            causeCounts[cause]++;
-          } else {
-            causeCounts[cause] = 1;
-          }
-        });
-    
-      const pieLabels = Object.keys(causeCounts);
-      const pieData = Object.values(causeCounts);
+      data.forEach(item => {
+        const cause = item.cause_description;
+        if (causeCounts[cause]) {
+          causeCounts[cause]++;
+        } else {
+          causeCounts[cause] = 1;
+        }
+      });
+  
+    const pieLabels = Object.keys(causeCounts);
+    const pieData = Object.values(causeCounts);
 
-      // Access the canvas element
       const pieChartCanvas = document.getElementById("pieChart")
-      
-        // window.pieChart.data.datasets[0].data = pieData;
-        // window.pieChart.update();
-      // } else {
+
         Plotly.newPlot(pieChartCanvas, [{
           type: 'pie',
+          title: 'Wildfire Causes <br> per Year',
           labels: pieLabels,
           values: pieData,
           marker:{ 
             colors: getColor(pieLabels),
             },
+          legend: 'left',
+          hole: .5
           }])
         }
 
@@ -119,14 +123,63 @@ d3.json("/data").then(function(data) {
       totalAcres[state] = acres;
     })
     
-    const barChartContainer = document.getElementById("barChart");
+    const barChartContainer = document.getElementById("acreChart");
+
 
     Highcharts.chart(barChartContainer, {
       chart: {
         type: "bar",
+        borderRadius: '10px'
+      },
+      legend: {
+        enabled: false
       },
       title: {
-        text: "Total Acres Burned per State per Year",
+        text: "Total Acres Burned per State per Year"
+      },
+      xAxis: {
+        categories: states,
+        title: {
+          text: "State"
+        },
+      },
+      yAxis: {
+        min: 0,
+        title: {
+          text: "Number of Acres Burned"
+        },
+      },
+      series: [
+        {
+          name: "Acres Burned",
+          data: Object.values(totalAcres),
+          color: "#64508C", // Customize color
+        },
+      ],
+    });
+  }
+
+  function createColChart(data) {
+    const states = [...new Set(data.map(item => item.state))]; // Get unique years
+    const fireCounts = {};
+
+    states.forEach(state => {
+      const count = data.filter(item => item.state === state).length;
+      fireCounts[state] = count;
+    });
+
+    const colChartContainer = document.getElementById("numberChart");
+
+    Highcharts.chart(colChartContainer, {
+      chart: {
+        type: "column",
+        borderRadius: '10px'
+      },
+      legend: {
+        enabled: false
+      },
+      title: {
+        text: "Number of Fires per State per Year",
       },
       xAxis: {
         categories: states,
@@ -137,14 +190,14 @@ d3.json("/data").then(function(data) {
       yAxis: {
         min: 0,
         title: {
-          text: "Number of Acres",
+          text: "Number of Fires",
         },
       },
       series: [
         {
-          name: "Acres Burned",
-          data: Object.values(totalAcres),
-          color: "rgba(54, 162, 235, 0.8)", // Customize color
+          name: "Number of Fires",
+          data: Object.values(fireCounts),
+          color: "#5F7896", // Customize color
         },
       ],
     });
@@ -163,6 +216,7 @@ d3.json("/data").then(function(data) {
     createCircleMarkers(selectedMarkers);
     createPieChart(selectedData);
     createBarChart(selectedData);
+    createColChart(selectedData)
   }
   // Get the dropdown select element
   const yearSelect = document.getElementById("year-select");

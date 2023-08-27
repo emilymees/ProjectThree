@@ -31,11 +31,38 @@
 
 <body>
 
+  <div class="fixed-header">
+    <div class="container">
+        <div>
+            <div class="container">
+              <font size="7"><b>Wildfire Analysis (Fire Size G) 2000 - 2020</b></font><br><br>
+              Project Three Team: 
+              &ensp;Jair Navarrete, 
+              &ensp;Emily Boulware, 
+              &ensp;Desmond Workman,
+              &ensp;Shelby Reyes-Widrick
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- <div class="fixed-footer">
+    <div class="container">
+        <div>
+            <div class="container">
+              Project Three Team: 
+              Jair Navarrete, 
+              Desmond Workman, 
+              Emily Boulware, 
+              Shelby Reyes-Widrick
+            </div>
+        </div>
+    </div>
+  </div> -->
+
   <select id="year-select">
 
   </select>
-
-  
         
   <!-- The div that holds our map -->
   <div id="map"></div>
@@ -44,7 +71,10 @@
   <div id="pieChart"></div>
   
   <!-- div that holds our bar chart -->  
-  <div id="barChart"></div>
+  <div id="acreChart"></div>
+
+  <!-- div that holds our bar chart -->  
+  <div id="numberChart"></div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -52,11 +82,13 @@
     crossorigin=""></script>
   <!-- D3 JavaScript -->
   <script src="https://d3js.org/d3.v7.min.js"></script> 
+
   <!-- plotly.js library -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
   <!-- highcharts library -->
   <script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 
   <!-- flask code to link to your index.js file. Feel free to copy / paste or adjust to your file names-->

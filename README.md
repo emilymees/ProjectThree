@@ -18,14 +18,14 @@ The wildfire records were acquired from several reporting systems of federal, st
 
 <h2> Screen Shots of Dashboard Visualizations</h2>
 
-Example of Wildfire DataFrame
+<div align="center"> Example of Wildfire DataFrame </div>
 ![Wildfire DataFrame](https://github.com/emilymees/ProjectThree/blob/main/images/wildfires_df.png)
 
-Causes of Human Wildfires
+<div align="center"> Causes of Human Wildfires </div>
 ![Types of Human Wildfires](https://github.com/emilymees/ProjectThree/blob/main/images/humanFires_df.png)
 
-Pie Chart of Non-Natural Wildfires
+<div align="center"> Pie Chart of Non-Natural Wildfires </div>
 ![Pie Chart](https://github.com/emilymees/ProjectThree/blob/main/images/non-natural_causes.png)
 
-Total Wildfires per Year
+<div align="center"> Total Wildfires per Year </div>
 ![Bar Graph](https://github.com/emilymees/ProjectThree/blob/main/images/yearly_fire_total.png)

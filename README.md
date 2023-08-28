@@ -3,6 +3,7 @@
 <h2> Overview </h2>
 
 An interactive dashboard of wildfires that occured in the United States from 2000-2020. We used PostgreSQL, Javascript, HTML, CSS, Leaflet, and Highcharts to analyze and visualize our findings to the following questions:
+
     * Have any states had a significant increase or decrease in large fires over the years?
     * What are main causes of these fires?
     * Are large forest fires becoming more or less common US wide?

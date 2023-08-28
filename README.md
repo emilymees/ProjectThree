@@ -16,8 +16,16 @@ Team members: Emily Boulware, Jair Navarrete, Shelby Reyes-Widrick, and Desmond 
 The dataset used was from kaggle and can be found [here.](https://www.kaggle.com/datasets/behroozsohrabi/us-wildfire-records-6th-edition 'US Wildfires') 
 The wildfire records were acquired from several reporting systems of federal, state, and local fire organizations. 
 
-<h2> Screen Shots of Dashboard </h2>
+<h2> Screen Shots of Dashboard Visualizations</h2>
 
 Example of Wildfire DataFrame
 ![Wildfire DataFrame](https://github.com/emilymees/ProjectThree/blob/main/images/wildfires_df.png)
 
+Causes of Human Wildfires
+![Types of Human Wildfires](https://github.com/emilymees/ProjectThree/blob/main/images/humanFires_df.png)
+
+Pie Chart of Non-Natural Wildfires
+![Pie Chart](https://github.com/emilymees/ProjectThree/blob/main/images/non-natural_causes.png)
+
+Total Wildfires per Year
+![Bar Graph](https://github.com/emilymees/ProjectThree/blob/main/images/yearly_fire_total.png)

@@ -20,7 +20,7 @@ The wildfire records were acquired from several reporting systems of federal, st
 
 <div align="center"> Complete Dashboard </div>
 
-![Dashboard]()
+![Dashboard](https://github.com/emilymees/ProjectThree/blob/main/images/dashboard.png)
 
 <div align="center"> Example of Wildfire DataFrame </div>
 

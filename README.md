@@ -2,7 +2,7 @@
 
 <h2> Overview </h2>
 
-An interactive dashboard of wildfires that occured in the United States from 2000-2020. We used PostgreSQL, Javascript, HTML, CSS, Leaflet, and Highcharts to analyze and visualize our findings to the following questions:
+An interactive dashboard of wildfires that occured in the United States from 2000-2020. We used PostgreSQL, Flask, Javascript, HTML, CSS, Leaflet, and Highcharts to analyze and visualize our findings to the following questions:
 
 * Have any states had a significant increase or decrease in large fires over the years?
 * What are main causes of these fires?
@@ -17,3 +17,7 @@ The dataset used was from kaggle and can be found [here.](https://www.kaggle.com
 The wildfire records were acquired from several reporting systems of federal, state, and local fire organizations. 
 
 <h2> Screen Shots of Dashboard </h2>
+
+Example of Wildfire DataFrame
+![Wildfire DataFrame](https://github.com/emilymees/ProjectThree/blob/main/images/wildfires_df.png)
+

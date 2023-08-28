@@ -11,9 +11,44 @@ body {
 
   #map {
     width: 100%;
-    height: 500px;
+    height: 550px;
     border: 1px solid #ccc;
     border-radius: 10px;
+  }
+
+  .fixed-header {
+    width: 100%;
+    display:block;
+    position:sticky;  
+    z-index: 99;   
+    overflow: visible;   
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .fixed-header{
+    top: 0px;
+  }
+  /* .fixed-footer{
+    bottom: 0px;
+  } */
+  .container{
+    width: 80%;
+    margin: 0 auto; /* Center the DIV horizontally */
+  }
+
+  select {
+    position:relative;
+    left: 70px;
+    height: 30px;
+    width: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:large;
+    /* font-weight: bold; */
+
   }
   
   /* Customize map controls */
@@ -62,5 +97,107 @@ body {
   
   /* Customize map tiles */
   .leaflet-tile {
-    filter: grayscale(100%);
+    /* filter: grayscale(100%); */
+    /* filter: invert(100%) hue-rotate(150deg); */
+    filter: invert(92%) grayscale(100%);
+    /* filter: invert(100%) grayscale(100%) sepia(100%) hue-rotate(180deg); */
+  }
+
+  /* map legend */
+  .legend {
+    padding: 6px 8px;
+    font: 14px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
+    /*border-radius: 5px;*/
+    line-height: 24px;
+    color: #343434;
+  }
+  .legend h4 {
+    text-align: center;
+    font-size: 16px;
+    margin: 2px 12px 8px;
+    color: #393939;
+  }
+  .legend span {
+    position: relative;
+    bottom: 3px;
+  }
+  .legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin: 0 8px 0 0;
+    opacity: 0.75;
+  }
+  .legend i.icon {
+    background-size: 18px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+
+  
+  #year-select {
+    font-size: 12px;          /* Set the font size */
+    font-weight: bold; 
+    color: #333;              /* Set the text color */
+    background-color: #f5f5f5; /* Set the background color */
+    border: 1px solid #ccc;   /* Add a border */
+    padding: 8px;             /* Add padding around the text */
+    border-radius: 5px;       /* Round the corners */
+    width: 200px;             /* Set the width */
+  }
+  
+  #year-select option {
+    font-size: 15px;          /* Set the font size for options */
+    background-color: white;  /* Set the background color for options */
+    color: #333;              /* Set the text color for options */
+  }
+  
+  /* Apply custom styling when the dropdown is open */
+  #year-select:focus {
+    outline: none;            /* Remove the default focus outline */
+    border-color: #66afe9;    /* Change border color when focused */
+    box-shadow: 0 0 5px #66afe9; /* Add a subtle box shadow */
+  }
+  /* Wildfire Counter styling*/
+  #counter {
+    font-size: 18px;        /* Set the font size */
+    font-weight: bold;      /* Set the font weight */
+    color: #090909;            /* Set the text color */
+    background-color: #cd2f2f; /* Set the background color */
+    padding: 10px;          /* Add some padding */
+    text-align: center;     /* Center the text */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px;     /* Round the corners */
+    width: 200px;           /* Set the width */
+    margin: 10px auto;      /* Center the element horizontally */
+  }
+
+  #pieChart {
+    box-shadow: 0 2px 5px rgba(46, 80, 122, 0.256);
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between; /* Distribute containers evenly */
+    flex-wrap: wrap; /* Allow containers to wrap to the next line if needed */
+  }
+
+
+  .chart-container {
+    /* width: 800px; Set the width of each chart */
+    /* height: 500px;  Set the height of each chart */
+    height: 500px; 
+    flex: 0 0 calc(50% - 20px);
+    border: 5px solid #090909; /* Add a border to the charts */
+    border-radius: 5px; /* Round the corners */
+    margin: 10px; /* Add spacing between the charts */
+    float: left;  /*Float the charts left   */
+  }
+  
+  .clearfix::after { 
+    content: "";
+    display: table;
+    clear: both;
   }

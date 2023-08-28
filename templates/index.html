@@ -30,10 +30,16 @@
 </head>
 
 <body>
+  <!-- <div id = "title"></div> -->
+
+  <!-- <div class="flex-container"></div> -->
+  <h1 class="title"> Wildfire Dashboard</h1>
 
   <select id="year-select">
 
   </select>
+
+  <div id="counter">Total Wildfires: 0</div>
 
   
         
@@ -41,10 +47,19 @@
   <div id="map"></div>
 
   <!-- dive that holds our pie chart -->
-  <div id="pieChart"></div>
+  <div id="pieChart" class="chart-container"></div>
+
+   <!-- div that holds our Bar with negative stack chart -->  
+   <div id="negativeBarChart" class="chart-container"></div>
   
   <!-- div that holds our bar chart -->  
-  <div id="barChart"></div>
+  <div id="barChart" class="chart-container"></div>
+
+  <!-- div that holds our bar chart -->  
+  <div id="stackedBarChart" class="chart-container"></div>
+
+ 
+
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

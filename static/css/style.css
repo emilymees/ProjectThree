@@ -111,3 +111,60 @@ body {
     background-size: 18px;
     background-color: rgba(255, 255, 255, 1);
   }
+
+  .title {
+    text-align: center;
+  
+  }
+  
+  #year-select {
+    font-size: 12px;          /* Set the font size */
+    color: #333;              /* Set the text color */
+    background-color: #f5f5f5; /* Set the background color */
+    border: 1px solid #ccc;   /* Add a border */
+    padding: 8px;             /* Add padding around the text */
+    border-radius: 5px;       /* Round the corners */
+    width: 200px;             /* Set the width */
+  }
+  
+  #year-select option {
+    font-size: 15px;          /* Set the font size for options */
+    background-color: white;  /* Set the background color for options */
+    color: #333;              /* Set the text color for options */
+  }
+  
+  /* Apply custom styling when the dropdown is open */
+  #year-select:focus {
+    outline: none;            /* Remove the default focus outline */
+    border-color: #66afe9;    /* Change border color when focused */
+    box-shadow: 0 0 5px #66afe9; /* Add a subtle box shadow */
+  }
+  /* Wildfire Counter styling*/
+  #counter {
+    font-size: 18px;        /* Set the font size */
+    font-weight: bold;      /* Set the font weight */
+    color: #181717;            /* Set the text color */
+    background-color: #e1af0c; /* Set the background color */
+    padding: 10px;          /* Add some padding */
+    text-align: center;     /* Center the text */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px;     /* Round the corners */
+    width: 200px;           /* Set the width */
+    margin: 10px auto;      /* Center the element horizontally */
+  }
+
+
+  .chart-container {
+    width: 800px; /* Set the width of each chart */
+    height: 500px; /* Set the height of each chart */
+    border: 1px solid #ccc; /* Add a border to the charts */
+    border-radius: 5px; /* Round the corners */
+    margin: 25px; /* Add spacing between the charts */
+    float: left; /* Float the charts left */
+  }
+  
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }

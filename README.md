@@ -1,4 +1,4 @@
-<h1> Wildfires Analysis in the US </h1>
+<h1> Analyzing Large-Scale Wildfires in the United States </h1>
 
 <h2> Overview </h2>
 

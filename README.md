@@ -2,7 +2,7 @@
 
 <h2> Overview </h2>
 
-An interactive dashboard of wildfires that occured in the United States from 2000-2020. We used PostgreSQL, Flask, Javascript, HTML, CSS, Leaflet, Plotly, and Highcharts to analyze and visualize our findings to the following questions:
+An interactive dashboard of wildfires that occured in the United States from 2000-2020. We used PostgreSQL, Flask, Javascript, HTML, CSS, D3, Leaflet, Plotly, and Highcharts to analyze and visualize our findings to the following questions:
 
 * What are the Primary Factors Contributing to these Fires?
 * Does a relationship exist between the passage of time and the total count of large wildfires?

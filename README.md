@@ -17,6 +17,7 @@ Team members: Emily Boulware, Jair Navarrete, Shelby Reyes-Widrick, and Desmond 
 
 The dataset used was from kaggle and can be found [here.](https://www.kaggle.com/datasets/behroozsohrabi/us-wildfire-records-6th-edition 'US Wildfires') 
 The wildfire records were acquired from several reporting systems of federal, state, and local fire organizations. 
+
 *Note: Original dataset contains data from 1992-2020 we opted to minimize the dataset and analyze years 2000-2020 on size G wildfires only*
 
 <h2> Screen Shots of Dashboard Visualizations</h2>
